@@ -23,7 +23,12 @@ function fibRecursive(n) {
 }
 
 /*
- fibRecursive(6);
+ console.time('fibRecursive');
+ fibRecursive(8);
+ console.timeEnd('fibRecursive');
+
+ computing fibRecursive(8)
+ computing fibRecursive(7)
  computing fibRecursive(6)
  computing fibRecursive(5)
  computing fibRecursive(4)
@@ -36,7 +41,27 @@ function fibRecursive(n) {
  computing fibRecursive(3)
  computing fibRecursive(2)
  computing fibRecursive(2)
- 8
+ computing fibRecursive(5)
+ computing fibRecursive(4)
+ computing fibRecursive(3)
+ computing fibRecursive(2)
+ computing fibRecursive(2)
+ computing fibRecursive(3)
+ computing fibRecursive(2)
+ computing fibRecursive(6)
+ computing fibRecursive(5)
+ computing fibRecursive(4)
+ computing fibRecursive(3)
+ computing fibRecursive(2)
+ computing fibRecursive(2)
+ computing fibRecursive(3)
+ computing fibRecursive(2)
+ computing fibRecursive(4)
+ computing fibRecursive(3)
+ computing fibRecursive(2)
+ computing fibRecursive(2)
+
+ fibRecursive: 6.189ms
  */
 
 //***************************************************************************************************************
@@ -72,7 +97,12 @@ Fibber.prototype.fib = function (n) {
 };
 
 /*
- new Fibber().fib(6);
+ console.time('fib');
+ new Fibber().fib(8);
+ console.timeEnd('fib');
+
+ computing fib(8)
+ computing fib(7)
  computing fib(6)
  computing fib(5)
  computing fib(4)
@@ -81,5 +111,8 @@ Fibber.prototype.fib = function (n) {
  grabbing memo[2]
  grabbing memo[3]
  grabbing memo[4]
- 8
+ grabbing memo[5]
+ grabbing memo[6]
+
+ fib: 2.315ms
  */
