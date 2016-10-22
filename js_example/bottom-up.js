@@ -15,7 +15,7 @@
 //bad
 function product1ToN_1(n) {
 	// we assume n >= 1
-	return (n > 1) ? (n * product1ToN(n-1)) : 1;
+	return (n > 1) ? (n * product1ToN_1(n - 1)) : 1;
 }
 /**
  * This approach has a problem: it builds up a call stack of size O(n)O, which makes our total memory cost O(n).
@@ -47,3 +47,12 @@ function product1ToN_2(n) {
  * In general, best not to assume your compiler/interpreter will do this work for you.
  */
 
+try {
+	product1ToN_1(20000)
+}
+catch (err) {
+	console.error('StackOverflowError!!!');
+}
+
+console.log('####################');
+product1ToN_2(20000);
