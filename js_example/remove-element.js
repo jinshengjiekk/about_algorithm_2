@@ -16,7 +16,7 @@
  *
  * @param arr 传入数组
  * @param value 传入需要过滤的参数
- * @returns {number}
+ * @returns {number} 数组的长度实际上是没有变化的，实际返回的是过滤后的表象长度。
  */
 function removeElement(arr, value) {
 	let length = arr.length;
