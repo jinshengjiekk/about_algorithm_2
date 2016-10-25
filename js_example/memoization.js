@@ -95,7 +95,7 @@ Fibber.prototype.fib = function (n) {
 
 	return result;
 };
-
+//################################################################################################
 /*
  console.time('fib');
  new Fibber().fib(8);

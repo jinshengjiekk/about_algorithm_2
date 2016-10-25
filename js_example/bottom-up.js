@@ -47,6 +47,7 @@ function product1ToN_2(n) {
  * In general, best not to assume your compiler/interpreter will do this work for you.
  */
 
+//##############################################################################################
 try {
 	product1ToN_1(20000)
 }
