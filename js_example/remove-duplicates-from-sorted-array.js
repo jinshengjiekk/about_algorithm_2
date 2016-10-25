@@ -41,7 +41,7 @@ function removeDuplicatesFromSortedArray_1(/*Array*/ arr) {
 }
 
 /**
- * 此方法相对简单易懂
+ * 此方法相对简单易懂,运行效率也更好
  * @param arr
  * @returns {number}
  */
