@@ -17,7 +17,19 @@
  * @returns {number}
  */
 function removeDuplicatesFromSortedArray(/*Array*/ arr) {
+	if(Object.prototype.toString.call(arr) !== '[object Array]'){
+		console.error('parameter error!');
+		throw new Error('the type of arguments must be Array!');
+	}
+
+	if(arguments.length > 1){
+		console.warn("the arguments' length should be only one!");
+	}
+
 	let l = arr.length;
+	if(l){
+		return 0;
+	}
 	let i = 0, j = 1;
 	for (; i < l; i++, j++) {
 		if (arr[i] === arr[--j]) {
