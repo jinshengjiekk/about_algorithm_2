@@ -9,3 +9,17 @@
  * with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
  * ===================================================================================================
  */
+
+
+
+function removeDuplicate_1(/*Array*/ arr) {
+	if (Object.prototype.toString.call(arr) !== '[object Array]') {
+		console.error('parameter error!');
+		throw new Error('the type of arguments must be Array!');
+	}
+
+	if (arguments.length > 1) {
+		console.warn("the arguments' length should be only one!");
+	}
+
+}
