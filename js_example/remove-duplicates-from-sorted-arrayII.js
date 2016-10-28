@@ -28,13 +28,39 @@ function removeDuplicate_1(/*Array*/ arr) {
 
 	let i = 0, j = 0, l = arr.length;
 	for (; j < l; j++) {
-		if (i < 2 || arr[j] != arr[i-2]) {
+		if (i < 2 || arr[j] != arr[i - 2]) {
 			arr[i++] = arr[j];
 		}
 	}
 	console.log(arr);
 	return i;
 }
+
+/**
+ *  箭头函数内部没有自己的this， arguments;
+ * @param arr
+ * @returns {number}  返回的是过滤后的长度，数组长度仍然没有变，后面的元素存在重复现象
+ */
+let removeDuplicate_2 = (/*Array*/ arr) => {
+	if (Object.prototype.toString.call(arr) !== '[object Array]') {
+		console.error('parameter error!');
+		throw new Error('the type of arguments must be Array!');
+	}
+	let i = 1, j = 0, count = 1, l = arr.length;
+	for (; i < l; i++) {
+		if (arr[i] == arr[j]) {
+			if (count < 2) {
+				arr[++j] = arr[i];
+				count++;
+			}
+		} else {
+			arr[++j] = arr[i];
+			count = 1;
+		}
+	}
+	console.log(arr);
+	return j + 1;
+};
 
 //##################################################################################
 const arr0 = [];
@@ -49,3 +75,16 @@ console.info(removeDuplicate_1(arr2));
 console.info(removeDuplicate_1(arr3));
 console.info(removeDuplicate_1(arr4));
 console.info(removeDuplicate_1(arr5));
+
+const arr00 = [];
+const arr11 = [1, 1, 1, 2, 2, 2, 2, 3];
+const arr22 = [54, 32, 31, 31, 23, 23, 23, 23, 23, 23, 23, 21, 21, 10, 10, 10, 2, 1];
+const arr33 = [1, 2];
+const arr44 = [1];
+const arr55 = [1, 2, 3];
+console.info(removeDuplicate_2(arr00));
+console.info(removeDuplicate_2(arr11));
+console.info(removeDuplicate_2(arr22));
+console.info(removeDuplicate_2(arr33));
+console.info(removeDuplicate_2(arr44));
+console.info(removeDuplicate_2(arr55));
