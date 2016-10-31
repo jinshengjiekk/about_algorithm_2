@@ -62,6 +62,35 @@ let removeDuplicate_2 = (/*Array*/ arr) => {
 	return j + 1;
 };
 
+/**
+ * 此方法比较难理解，比较绕
+ * @param arr
+ * @returns {number}  返回的是过滤后的长度，数组长度仍然没有变，后面的元素存在重复现象
+ */
+let removeDuplicate_3 = (/*Array*/ arr) => {
+	if (Object.prototype.toString.call(arr) !== '[object Array]') {
+		console.error('parameter error!');
+		throw new Error('the type of arguments must be Array!');
+	}
+	let i = 0, j, cur = 0, l = arr.length;
+	if(!l){
+		return 0;
+	}
+	for(;i < l; ){
+		for(j=i; j < l; j++){
+			if(arr[i] != arr[j]){
+				break;
+			}
+			if(j - i < 2){
+				arr[cur++] = arr[j];
+			}
+		}
+		i = j;
+	}
+	console.log(arr);
+	return cur;
+};
+
 //##################################################################################
 const arr0 = [];
 const arr1 = [1, 1, 1, 2, 2, 2, 2, 3];
@@ -88,3 +117,16 @@ console.info(removeDuplicate_2(arr22));
 console.info(removeDuplicate_2(arr33));
 console.info(removeDuplicate_2(arr44));
 console.info(removeDuplicate_2(arr55));
+
+const arr000 = [];
+const arr111 = [1, 1, 1, 2, 2, 2, 2, 3];
+const arr222 = [54, 32, 31, 31, 23, 23, 23, 23, 23, 23, 23, 21, 21, 10, 10, 10, 2, 1];
+const arr333 = [1, 2];
+const arr444 = [1];
+const arr555 = [1, 2, 3];
+console.info(removeDuplicate_3(arr000));
+console.info(removeDuplicate_3(arr111));
+console.info(removeDuplicate_3(arr222));
+console.info(removeDuplicate_3(arr333));
+console.info(removeDuplicate_3(arr444));
+console.info(removeDuplicate_3(arr555));
