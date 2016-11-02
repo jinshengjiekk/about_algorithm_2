@@ -17,5 +17,9 @@ function ListNode(val) {
 let deleteDuplicates;
 
 deleteDuplicates = function (head) {
+	if(head == null || head.next == null){
+		return head;
+	}
+
 
 };
